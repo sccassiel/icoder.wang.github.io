@@ -66,6 +66,16 @@
 <li>chrome headless或者phantomjs来模拟浏览器环境</li>
 <li>tesseract识别验证码</li>
 <li>代理ip等<br>所以说，100%能反爬是不可能的，只能逐步提升爬虫爬取数据的门槛。<h3 id="一些大厂的反爬做法"><a href="#一些大厂的反爬做法" class="headerlink" title="一些大厂的反爬做法"></a>一些大厂的反爬做法</h3></li>
+<li><p>font-face拼凑式<br>例子：<a href="http://maoyan.com/films/342601" target="_blank" rel="noopener">猫眼电影</a><br>猫眼电影里，对于票房数据，展示的并不是纯粹的述职。页面使用font-face定义了字符集，并通过unicode去映射展示。也就是说，出去图像识别，必须同时爬取字符集，才能识别出数字。<br><img src="/2018/09/11/anti-climb/maoyan.jpg" alt="maoyan">,<br>并且，每次刷新页面，字符集的URL都是有变化的，无疑更大难度的增加了爬取成本<br><img src="/2018/09/11/anti-climb/maoyan1.jpg" alt="maoyan1">  </p>
+</li>
+<li><p>background拼凑式<br>例子：<a href="http://www.meituan.com/dianying/342601?#content" target="_blank" rel="noopener">美团</a><br>与font的策略类似，美团里用到的是background拼凑，数字其实是图片，根据不同的background便宜，显示出不同的支付。<br><img src="/2018/09/11/anti-climb/meituan.jpg" alt="meituan"><br>并且不同页面，图片的字符排序也是有区别的。不过理论上只需要生成0-9与小数点。<br>页面A：<img src="/2018/09/11/anti-climb/meituan1.jpg" alt="meituan1">  页面B：<img src="/2018/09/11/anti-climb/meituan2.jpg" alt="meituan2">  </p>
+</li>
+<li><p>字符穿插式<br>例子：<a href="https://mp.weixin.qq.com/s?__biz=MzI0MDYwNjk2OA==&amp;mid=2247484365&amp;idx=4&amp;sn=291a93e8a4ce6e90d3b6ef8b98fe09c4&amp;chksm=e919085ade6e814cc037ecf6a873f22da0e492911a4e539e6f8fdeff022806b4d248c4d54194&amp;scene=4" target="_blank" rel="noopener">微信公众号</a><br>某些微信公众号的文章里，穿插了各种迷之字符，并且通过样式把这些字符隐藏掉。<br>这种方式虽然令人震惊…但其实没有太大的识别与过滤难度，甚至可以做得更好，不过也算是一种脑洞吧。<br><img src="/2018/09/11/anti-climb/weixin1.jpg" alt="weixin">  </p>
+</li>
+<li><p>伪元素隐藏式<br>例子：<a href="http://car.autohome.com.cn/config/series/3170.html" target="_blank" rel="noopener">汽车之家</a><br>汽车之家里，把关键的厂商信息，做到了伪元素的content里。<br>这也是一种思路：爬取网页，必须得解析css，需要拿到伪元素的content，这就提升了爬虫的难度。<br><img src="/2018/09/11/anti-climb/autohome.jpg" alt="autohome">  </p>
+</li>
+<li><p>元素定位覆盖式<br>例子：<a href="https://flight.qunar.com/site/oneway_list.htm?searchDepartureAirport=%E5%B9%BF%E5%B7%9E&amp;searchArrivalAirport=%E5%8C%97%E4%BA%AC&amp;searchDepartureTime=2017-07-06&amp;searchArrivalTime=2017-07-09&amp;nextNDays=0&amp;startSearch=true&amp;fromCode=CAN&amp;toCode=BJS&amp;from=qunarindex&amp;lowestPrice=null" target="_blank" rel="noopener">去哪儿</a><br>还有热爱数学的去哪儿，对于一个4位数字的机票价格，先用四个i标签渲染，再用两个b标签去绝对定位偏移量，覆盖故意展示错误的i标签，最后在视觉上形成正确的价格…<br><img src="/2018/09/11/anti-climb/qunaer.jpg" alt="qunaer"><br>这说明爬虫会解析css还不行，还得会做数学题。</p>
+</li>
 </ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
