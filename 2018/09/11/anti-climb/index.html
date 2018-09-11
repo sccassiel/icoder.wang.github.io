@@ -70,13 +70,8 @@
 </li>
 <li><p>background拼凑式<br>例子：<a href="http://www.meituan.com/dianying/342601?#content" target="_blank" rel="noopener">美团</a><br>与font的策略类似，美团里用到的是background拼凑，数字其实是图片，根据不同的background便宜，显示出不同的支付。<br><img src="/2018/09/11/anti-climb/meituan.jpg" alt="meituan"><br>并且不同页面，图片的字符排序也是有区别的。不过理论上只需要生成0-9与小数点。<br>页面A：<img src="/2018/09/11/anti-climb/meituan1.jpg" alt="meituan1">  页面B：<img src="/2018/09/11/anti-climb/meituan2.jpg" alt="meituan2">  </p>
 </li>
-</ul>
-<!-- + 字符穿插式  
-例子：[微信公众号](https://mp.weixin.qq.com/s?__biz=MzI0MDYwNjk2OA==&mid=2247484365&idx=4&sn=291a93e8a4ce6e90d3b6ef8b98fe09c4&chksm=e919085ade6e814cc037ecf6a873f22da0e492911a4e539e6f8fdeff022806b4d248c4d54194&scene=4)  
-某些微信公众号的文章里，穿插了各种迷之字符，并且通过样式把这些字符隐藏掉。
-这种方式虽然令人震惊…但其实没有太大的识别与过滤难度，甚至可以做得更好，不过也算是一种脑洞吧。 
-![weixin](anti-climb/weixin1.jpg)   -->
-<ul>
+<li><p>字符穿插式<br>例子：<a href="https://mp.weixin.qq.com/s?__biz=MzI0MDYwNjk2OA==&amp;mid=2247484365&amp;idx=4&amp;sn=291a93e8a4ce6e90d3b6ef8b98fe09c4&amp;chksm=e919085ade6e814cc037ecf6a873f22da0e492911a4e539e6f8fdeff022806b4d248c4d54194&amp;scene=4" target="_blank" rel="noopener">微信公众号</a><br>某些微信公众号的文章里，穿插了各种迷之字符，并且通过样式把这些字符隐藏掉。<br>这种方式虽然令人震惊…但其实没有太大的识别与过滤难度，甚至可以做得更好，不过也算是一种脑洞吧。<br><img src="/2018/09/11/anti-climb/weixin1.jpg" alt="weixin">  </p>
+</li>
 <li><p>伪元素隐藏式<br>例子：<a href="http://car.autohome.com.cn/config/series/3170.html" target="_blank" rel="noopener">汽车之家</a><br>汽车之家里，把关键的厂商信息，做到了伪元素的content里。<br>这也是一种思路：爬取网页，必须得解析css，需要拿到伪元素的content，这就提升了爬虫的难度。<br><img src="/2018/09/11/anti-climb/autohome.jpg" alt="autohome">  </p>
 </li>
 <li><p>元素定位覆盖式<br>例子：<a href="https://flight.qunar.com/site/oneway_list.htm?searchDepartureAirport=%E5%B9%BF%E5%B7%9E&amp;searchArrivalAirport=%E5%8C%97%E4%BA%AC&amp;searchDepartureTime=2017-07-06&amp;searchArrivalTime=2017-07-09&amp;nextNDays=0&amp;startSearch=true&amp;fromCode=CAN&amp;toCode=BJS&amp;from=qunarindex&amp;lowestPrice=null" target="_blank" rel="noopener">去哪儿</a><br>还有热爱数学的去哪儿，对于一个4位数字的机票价格，先用四个i标签渲染，再用两个b标签去绝对定位偏移量，覆盖故意展示错误的i标签，最后在视觉上形成正确的价格…<br><img src="/2018/09/11/anti-climb/qunaer.jpg" alt="qunaer"><br>这说明爬虫会解析css还不行，还得会做数学题。</p>
