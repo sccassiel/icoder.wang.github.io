@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>freedom</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="life,"> 
+    <meta name="description" content="想要的东西太多，所以要努力,常用反爬策略前言对于一张网页，我们往往希望它是结构良好，内容清晰，尽量直观的展示，才能让搜索引擎准确的认知他。而反过来，有些情景下，我们并不希望网页内容被轻易获取，比如电商网站的交易额，教育网站的题,"> 
+    <meta name="author" content="Andy"> 
+    <link rel="alternative" href="atom.xml" title="freedom" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+   
+
+</head>
+
+<body class="loading">
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">hexo博客搭建</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">hexo博客搭建</h1>
+        <div class="stuff">
+            <span>八月 20, 2018</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/javascript/">javascript</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/node/">node</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="hexo博客搭建"><a href="#hexo博客搭建" class="headerlink" title="hexo博客搭建"></a><center>hexo博客搭建</center></h2><h3 id="hexo介绍"><a href="#hexo介绍" class="headerlink" title="hexo介绍"></a>hexo介绍</h3><p>Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页-引用至官网，<a href="https://hexo.io" target="_blank" rel="noopener">传送门</a></p>
+<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><p>安装hexo相当简单。然而在安装之前，你必须检查电脑中是否已经安装如下环境</p>
+<ul>
+<li><a href="http://nodejs.org/" target="_blank" rel="noopener">node.js</a></li>
+<li><a href="http://git-scm.com/" target="_blank" rel="noopener">git</a><br>如果你的电脑中还未安装，请自行<a href="https://www.google.com" target="_blank" rel="noopener">google</a>,<font color="red">需要注意配置环境变量</font>。在以上环境安装完成之后,那么恭喜你，第一步成功了，接下来即可执行<code>npm install -g hexo-cli </code>，安装完成之后，开启你的博客之旅吧！具体hexo用法<a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">详见</a>。</li>
+</ul>
+<h3 id="hexo与GitHub-Pages"><a href="#hexo与GitHub-Pages" class="headerlink" title="hexo与GitHub Pages"></a>hexo与GitHub Pages</h3><p>在你将hexo run起来之后，是不是很想将你的文章分享给互联网上到其他人呢？如果是，那么恭喜你，你即将get到一项技能，将你的博客部署到GitHub Pages上，不必花钱买空间，省下的钱可以让你在买早饭到时候多加一个鸡蛋，嘻嘻！<a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages传送门</a>。OK，想必你已经懂了GitHub Pages上是什么东西了，那么接下来，hexo配合GitHub Pages怎么使用呢？</p>
+<ul>
+<li>安装<code>npm install hexo-deployer-git –save<code>部署模块</code></code></li>
+<li>在<code>_config.yml</code>文件中，找到Deployment,并做修改。我将我的配置贴出来，以供参考。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:sccassiel/icoder.wang.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="hexo-ssl"><a href="#hexo-ssl" class="headerlink" title="hexo ssl"></a>hexo ssl</h3><p>是否想让自己的博客拥有绿色小锁？现在Github Pages已经支持ssl了，勾选Enforce HTTPS ，如下图所示。<img src="/2018/08/20/hexobuild/ssl_img.jpg" alt="ssl">此时已经能支持https了，看看小锁是否绿了呢</p>
+<h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><p>可以将以上Github Pages通过自定义域名访问，在此，我以阿里云域名为例，其他服务商类似，通过在<code>source</code>文件夹新建CNAME文件，文件内容为<code>icoder.wang</code>,因为我的域名是这个，这儿你设置成你的域名。然后在阿里云域名解析中，设置CNAME解析，如下图：<br>    <img src="/2018/08/20/hexobuild/cname.jpg" alt="ssl"></p>
+<h3 id="gittalk评论插件"><a href="#gittalk评论插件" class="headerlink" title="gittalk评论插件"></a>gittalk评论插件</h3><p>让博客充满活力，当然少不了评论功能，借助gittalk可以很轻量级的集成。<a href="https://gitalk.github.io/" target="_blank" rel="noopener">gittalk</a>官网地址。按照教程，可轻松集成。我贴一下我的配置吧<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line"> autoExpand: <span class="literal">false</span></span><br><span class="line"> clientID: <span class="string">'3c47abf6bad0ba690501'</span></span><br><span class="line"> clientSecret: <span class="string">'d1bab30388e6386350500289ca42dc48fa7d6f0f'</span></span><br><span class="line"> repo: <span class="string">'icoder.wang.github.io'</span></span><br><span class="line"> owner: <span class="string">'sccassiel'</span></span><br><span class="line"> admin: [<span class="string">'sccassiel'</span>]</span><br><span class="line"> id: location.pathname</span><br><span class="line"> distractionFreeMode: <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<p>ok,自此，你已经拥有了一个比较完善的博客。如有高见，请通过评论告知我，一起交流，一起进步</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='3c47abf6bad0ba690501'
+        data-cs='d1bab30388e6386350500289ca42dc48fa7d6f0f'
+        data-r='icoder.wang.github.io'
+        data-o='sccassiel'
+        data-a='sccassiel'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo博客搭建"><span class="toc-number">1.</span> <span class="toc-text">hexo博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo介绍"><span class="toc-number">1.1.</span> <span class="toc-text">hexo介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo安装"><span class="toc-number">1.2.</span> <span class="toc-text">hexo安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo与GitHub-Pages"><span class="toc-number">1.3.</span> <span class="toc-text">hexo与GitHub Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo-ssl"><span class="toc-number">1.4.</span> <span class="toc-text">hexo ssl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义域名"><span class="toc-number">1.5.</span> <span class="toc-text">自定义域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gittalk评论插件"><span class="toc-number">1.6.</span> <span class="toc-text">gittalk评论插件</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
