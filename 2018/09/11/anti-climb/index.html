@@ -70,7 +70,7 @@
 </li>
 <li><p>background拼凑式<br>例子：<a href="http://www.meituan.com/dianying/342601?#content" target="_blank" rel="noopener">美团</a><br>与font的策略类似，美团里用到的是background拼凑，数字其实是图片，根据不同的background便宜，显示出不同的支付。<br><img src="/2018/09/11/anti-climb/meituan.jpg" alt="meituan"><br>并且不同页面，图片的字符排序也是有区别的。不过理论上只需要生成0-9与小数点。<br>页面A：<img src="/2018/09/11/anti-climb/meituan1.jpg" alt="meituan1">  页面B：<img src="/2018/09/11/anti-climb/meituan2.jpg" alt="meituan2">  </p>
 </li>
-<li><p>字符穿插式<br>例子：<a href="https://xx.com" target="_blank" rel="noopener">微信公众号</a><br>某些微信公众号的文章里，穿插了各种迷之字符，并且通过样式把这些字符隐藏掉。<br>这种方式虽然令人震惊…但其实没有太大的识别与过滤难度，甚至可以做得更好，不过也算是一种脑洞吧。<br><img src="/2018/09/11/anti-climb/weixin1.jpg" alt="weixin">  </p>
+<li><p>字符穿插式<br>例子：<a href="https://xx.com" target="_blank" rel="noopener">微信公众号</a><br>xxx<br><img src="/2018/09/11/anti-climb/weixin1.jpg" alt="weixin">  </p>
 </li>
 <li><p>伪元素隐藏式<br>例子：<a href="http://car.autohome.com.cn/config/series/3170.html" target="_blank" rel="noopener">汽车之家</a><br>汽车之家里，把关键的厂商信息，做到了伪元素的content里。<br>这也是一种思路：爬取网页，必须得解析css，需要拿到伪元素的content，这就提升了爬虫的难度。<br><img src="/2018/09/11/anti-climb/autohome.jpg" alt="autohome">  </p>
 </li>
